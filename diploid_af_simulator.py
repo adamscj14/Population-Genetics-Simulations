@@ -1,12 +1,15 @@
 # Will drive actual simulations
 
+import matplotlib.pyplot as plt
 import population_class
 
 generations = 1000
-
-pop = population_class.Population(100, 0.5)
-
+start_freq = 0.5
+pop = population_class.Population(100, start_freq)
+freqs = [start_freq]
 for i in range(generations):
-    print(pop.child_allele_freq)
     pop.advance_generation()
+    freqs.append(pop.child_allele_freq)
 
+plt.plot(list(range(generations+1)), freqs)
+plt.show()

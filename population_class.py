@@ -53,6 +53,7 @@ class Population:
 
         if len(self.child_individuals) != 0:
             self.parent_individuals = self.child_individuals[:]
+            self.parent_allele_freq = self.child_allele_freq
 
         child_individuals = list(range(self.size))
 
